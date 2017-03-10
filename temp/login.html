@@ -1,0 +1,28 @@
+<md-content layout="column">
+	<md-whiteframe layout-margin layout-align="center center">
+		<form name="loginForm" >
+			<md-input-container>
+		        <label>Email</label>
+		        <input ng-model="user.email" name="loginemail" required minlength="10" maxlength="100" type="email" ng-pattern="/^.+@.+\..+$/">
+		        <div ng-messages="userForm.loginemail.$error" >
+		        	<div ng-message="required" >This is a required field</div>
+		        	<div ng-message="minlength" >Invalid Email</div>
+		        	<div ng-message="maxlength" >Invalid Email</div> 
+		        	<div ng-message="pattern">Invalid Email</div>
+		        </div>
+	      	</md-input-container>
+	      	<md-input-container>
+		        <label>Password</label>
+		        <input ng-model="user.password" name="password" required minlength="6" maxlength="100" type="password">
+		        <div ng-messages="userForm.password.$error" >
+		        	<div ng-message="required" >This is a required field</div>
+		        	<div ng-message="minlength" >Invalid Email</div>
+		        	<div ng-message="maxlength" >Invalid Email</div> 
+		        </div>
+	      	</md-input-container>
+	      	<div layout="column" layout-align="center center">
+				<md-button class="md-raised md-primary" ng-click="signIn()">sign in</md-button>
+			</div>
+      </form>
+	</md-whiteframe>
+</md-content>
